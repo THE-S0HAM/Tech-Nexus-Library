@@ -1,0 +1,18 @@
+# Common ignores
+.DS_Store
+/.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+node_modules/
+dist/
+coverage/
+*.log
+
+# Editor/tooling
+.vscode/
+.idea/
+
+# Ignore the local helper script (kept executable locally but not tracked)
+scripts/create_structure.sh
