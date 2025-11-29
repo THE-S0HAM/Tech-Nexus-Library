@@ -102,26 +102,56 @@ last_updated: 2025-11-29
 
 See `CONTRIBUTING.md` for full contribution guidelines.
 
-## Host on GitHub Pages
+## Contributing & Guidelines (for authors and maintainers)
 
-This repository's `README.md` can serve as the site homepage for GitHub Pages. To publish:
+This repository is a community knowledge hub. If you want to contribute articles, tutorials, or reference notes, please follow these guidelines to keep the content consistent and discoverable.
 
-1. Go to your repository on GitHub → `Settings` → `Pages`.
-2. Under **Source**, choose `Branch: main` and `Folder: / (root)` and click **Save**.
+Required files and frontmatter
+- Use the article template at `TEMPLATES/article_template.md` for new posts.
+- Every article must include YAML frontmatter with these required fields:
 
-Alternatively, you can create a `docs/` folder and select `Branch: main` and `Folder: /docs` to serve a more customized site. If you want a different theme or static site generator, add a `docs/` site or a `gh-pages` workflow.
-
-## Scripts and automation
-
-- `scripts/create_structure.sh` — helper script to create this folder layout locally. The script is ignored in git to allow maintainers to keep a personal copy executable.
-
-Run locally (from repo root):
-
-```bash
-bash scripts/create_structure.sh
+```yaml
+---
+title: "Your article title"
+category: "<Domain name>"
+tags: [tag1, tag2]
+last_updated: YYYY-MM-DD
+---
 ```
+
+Where to add content
+- Place articles inside the appropriate top-level domain and subfolder (for example: `01-DevOps-Engineering/Kubernetes/your-article.md`).
+
+Writing & style tips
+- Keep articles clear, vendor-neutral when possible, and provide source links for claims or commands.
+- Include runnable examples, commands, and code blocks where helpful.
+- Use headings, short paragraphs, and optional diagrams for complex topics.
+
+Pull request workflow
+- Fork the repository and create a branch: `git checkout -b topic/your-article-name`.
+- Add your Markdown file, commit, and open a Pull Request against `main`.
+- The repository runs automatic checks on PRs to validate frontmatter and formatting. Fix any issues the CI reports and push updates to your branch.
+
+Assets, images and large files
+- Keep images under `assets/` and reference them using relative paths (e.g., `assets/images/diagram.png`).
+- For large binaries or datasets, use a hosted link and include instructions to fetch them.
+
+Licensing and attribution
+- By contributing you agree to license your contribution under this repository's MIT license.
+- Attribute external sources and respect third-party licenses. Prefer linking to original docs.
+
+Code of conduct
+- Be respectful, constructive, and inclusive in discussions and contributions. Report concerns by opening an issue and tagging a maintainer.
+
+Site theme and styling
+- The site uses a warm, accessible Jekyll theme to improve readability and visual appeal.
+- Styling overrides are in `assets/css/style.scss`. To propose design changes, open a PR and include visual examples.
 
 ---
 
-If you'd like, I can also generate an index page for each top-level folder that lists its articles automatically. Would you like me to add auto-index generation and a GitHub Actions workflow to publish the site?
+If you'd like, I can help with:
+- polishing article frontmatter for older files,
+- adding PR checks for date format and tag validation,
+- or creating a simple contributor checklist file to include in PR templates.
+
 
